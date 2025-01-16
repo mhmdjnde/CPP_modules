@@ -1,6 +1,8 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
+#include <iostream>
+
 class Fixed {
 private:
     int                 _rawBits;
@@ -32,11 +34,12 @@ public:
     static const Fixed &min(const Fixed &a, const Fixed &b);
     static Fixed &max(Fixed &a, Fixed &b);
     static const Fixed &max(const Fixed &a, const Fixed &b);
-    friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
     ~Fixed();
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
